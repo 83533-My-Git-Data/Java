@@ -13,11 +13,12 @@ package com.sunbeam;
 
 import java.util.Scanner;
 public class Invoice {
-	static double total=0;
+	
 	private String PNo;
 	private String PDesc;
 	private int quantity;
 	private double price;
+	private double amount=0;
 	Scanner sc = new Scanner(System.in);
 	
 	public Invoice() {
@@ -56,6 +57,11 @@ public class Invoice {
 	public void setQuantity(int quantity) {
 		this.quantity =quantity;
 	}
+	public double calculateAmt() {
+		amount = quantity*price;
+		return amount;
+		
+	}
 	
 	public void accept() {
 		System.out.println("Enter part number:");
@@ -69,14 +75,11 @@ public class Invoice {
 			setQuantity(0);
 		}
 		System.out.println("Enter price:");
-		price = sc.nextInt();
+		price = sc.nextDouble();
 		if(getPrice()<0) {
 			System.out.println("Price is not positive");
 			setPrice(0.0);
 		}
-	
-	total+=(quantity*price);
-	System.out.println("--------------");
 	}
 //	public Invoice accept() {
 //		return new Invoice(sc.next(),sc.next(),sc.nextInt(),sc.nextDouble());
@@ -86,10 +89,7 @@ public class Invoice {
 		System.out.println("PDesc : "+PDesc);
 		System.out.println("Quantity :"+quantity);
 		System.out.println("Price :"+price);
-		System.out.println("Bill: "+getQuantity()*getPrice());
 		System.out.println("--------------");
 	}
-	static void displayTotal() {
-		System.out.println("Total Bill:"+total);
-	}
+	
 }

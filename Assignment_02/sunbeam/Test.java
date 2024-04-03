@@ -5,10 +5,8 @@ public class Test {
 			Invoice I1 = new Invoice();
 			Invoice I2 = new Invoice();
 			I1.accept();
-			I2.accept();
-			I1.display();
-			I2.display();
-			Invoice.displayTotal();
+			I1.display();	
+			System.out.println("Invoice Amount:"+I1.calculateAmt());
 		}
 	}
 
