@@ -6,7 +6,7 @@ display students
 
 package com.sunbeam;
 
-public class Student implements Comparable<Student> {
+public class Student {
 	String name;
 	String city;
 	int rollno;
@@ -28,10 +28,5 @@ public class Student implements Comparable<Student> {
 		return "Student [RollNo=" + rollno + ",Name =" + name + ",City=" + city + ",marks="+marks+"]";
 	}
 
-	@Override
-	public int compareTo(Student o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+	
 }
