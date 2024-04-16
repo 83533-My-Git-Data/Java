@@ -17,7 +17,8 @@ public class Program {
 		int choice;
 
 		do {
-			System.out.println("1. Accept book details and add in collection\n" + "2. Display all books from collection\n"
+			System.out
+					.println("1. Accept book details and add in collection\n" + "2. Display all books from collection\n"
 							+ "3. Sort the book details as per category and display it.\n"
 							+ "4. Sort the book details as per author and display it.\n" + "5. Find book by id.");
 			System.out.println("Enter choice :");
@@ -85,17 +86,23 @@ public class Program {
 
 				break;
 			case 5:
-				System.out.println("Enter Book id:");
+				System.out.println("Enter Book id to search:");
 				String book = sc.next();
 				Book b1 = new Book();
 				b1.setIsbn(book);
+				int count = 0;
 				for (Book element : booklist) {
 					if (element.equals(b1)) {
 						System.out.println("Book is present");
+						break;
 					} else {
-						System.out.println("Book is not present");
+						count++;
 					}
 				}
+				if (count > 0) {
+					System.out.println("Book is not present");
+				}
+
 				break;
 			default:
 				System.out.println("Wrong choice");
